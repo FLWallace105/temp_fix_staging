@@ -61,7 +61,7 @@ module FixStaging
     end
 
     def temp_fix_subs
-      my_local_subs = Subscription.where("next_charge_scheduled_at = ?" nil)
+      my_local_subs = Subscription.where("next_charge_scheduled_at is null")
       my_local_subs.each do |mysub|
         my_day_date = generate_random_index(28)
         if my_day_date < 10
